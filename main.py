@@ -7,7 +7,7 @@ app = Flask(__name__)
 OPENSENSEMAP_API_URL = "https://api.opensensemap.org"
 
 def get_version():
-    return "0.0.1"
+    return "0.0.2"
 
 async def fetch_data(session, url):
     async with session.get(url) as response:
