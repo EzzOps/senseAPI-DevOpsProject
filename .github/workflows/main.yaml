@@ -25,7 +25,7 @@ jobs:
       run: npm install -g dockerfilelint
 
     - name: Lint Dockerfile
-      run: dockerfilelint .
+      run: dockerfilelint dockerfile
 
 
 
