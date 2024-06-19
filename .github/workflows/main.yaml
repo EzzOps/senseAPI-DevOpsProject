@@ -27,6 +27,9 @@ jobs:
     - name: Install dockerfilelint
       run: npm install -g dockerfilelint
 
+    - name: Install pylint
+      run: pip install pylint
+      
     - name: python lint
       run: pylint main.py
 
