@@ -27,7 +27,17 @@ jobs:
     - name: Lint Dockerfile
       run: dockerfilelint dockerfile
 
+    - name: Python linting with flake8
+      uses: advanced-security/python-lint-code-scanning-action@v1
+      with:
+        linter: flake8
+        
+    - name: Build and push Docker image
+      run: |
+        docker build -t senseAPI-DevOpsProject:${{ github.sha }} .
+        echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ezzops --password-stdin
+        docker push senseAPI-DevOpsProject:${{ github.sha }}
 
 
-    - name: Build Docker image
-      run: docker build -t your-image-name .
+
+
