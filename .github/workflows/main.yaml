@@ -31,7 +31,7 @@ jobs:
       uses: advanced-security/python-lint-code-scanning-action@v1
       with:
         linter: flake8
-        
+
     - name: Build and push Docker image
       run: |
         docker build -t senseAPI-DevOpsProject:${{ github.sha }} .
@@ -39,5 +39,6 @@ jobs:
         docker push senseAPI-DevOpsProject:${{ github.sha }}
 
 
-
+    - name: Lint Dockerfile
+      run: dockerfilelint dockerfile
 
