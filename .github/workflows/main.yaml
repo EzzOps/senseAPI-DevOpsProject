@@ -23,16 +23,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: lint
+      uses: luke142367/Docker-Lint-Action@v1.0.0
       with:
-        python-version: '3.x'
-
-    - name: Install dependencies for linting
-      run: pip install dockerfile-lint
-
-    - name: Lint Python code
-      run: flake8 .
-
-    - name: Lint Dockerfile
-      run: dockerfilelint Dockerfile
+        target: dockerfile
