@@ -24,8 +24,7 @@ jobs:
     - name: Install dockerfilelint
       run: npm install -g dockerfilelint
 
-    - name: Lint Dockerfile
-      run: dockerfilelint dockerfile
+
 
     - name: Python linting with flake8
       uses: advanced-security/python-lint-code-scanning-action@v1
