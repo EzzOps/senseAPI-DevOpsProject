@@ -37,9 +37,9 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t senseapi-devopsproject:${{ github.sha }} .
+        docker build -t ezzops/senseapi-devopsproject:${{ github.sha }} .
         echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ezzops --password-stdin
-        docker push senseapi-devopsproject:${{ github.sha }}
+        docker push ezzops/senseapi-devopsproject:${{ github.sha }}
 
 
     - name: Lint Dockerfile
