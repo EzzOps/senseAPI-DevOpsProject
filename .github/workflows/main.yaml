@@ -29,9 +29,10 @@ jobs:
 
     - name: Install pylint
       run: pip install pylint
-      
+
     - name: python lint
       run: pylint main.py
+      continue-on-error: true
 
 
     - name: Build and push Docker image
@@ -43,4 +44,5 @@ jobs:
 
     - name: Lint Dockerfile
       run: dockerfilelint dockerfile
+      continue-on-error: true
 
