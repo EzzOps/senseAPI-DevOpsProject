@@ -34,6 +34,12 @@ jobs:
       run: pylint main.py
       continue-on-error: true
 
+    - name: Run unit tests
+      run: |
+        pip install pytest pytest-asyncio aiohttp
+        pytest
+      continue-on-error: true
+
 
     - name: Build and push Docker image
       run: |
