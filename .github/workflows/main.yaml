@@ -5,6 +5,34 @@
 # https://github.com/MIS-Team24/khoyout-backend/blob/main/.github/workflows/main.yml
 # Add step to build the Docker image.
 #
-#
-#
-#
+name: CI 
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies for linting
+      run: pip install flake8 dockerfile-lint
+
+    - name: Lint Python code
+      run: flake8 .
+
+    - name: Lint Dockerfile
+      run: dockerfilelint Dockerfile
