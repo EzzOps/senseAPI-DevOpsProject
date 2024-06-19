@@ -1,0 +1,9 @@
+
+
+add a test file for the main.py 
+add a test step to run the test file in the github action
+refactor the github action file to look clear
+
+https://github.com/marketplace/actions/ossf-scorecard-action
+
+https://securityscorecards.dev/#using-the-github-action:~:text=Installation%20instructions,the%20link%20below%3A
