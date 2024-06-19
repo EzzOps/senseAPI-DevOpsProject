@@ -39,5 +39,23 @@ jobs:
         pip install pytest pytest-asyncio aiohttp
         pytest
 
-   
+    - name: Check /version endpoint
+      run: |
+        sleep 5  # Give the server time to start
+        response=$(curl -s http://127.0.0.1:5000/version)
+        echo "Response: $response"
+        if [[ "$response" != *'"version": "0.0.2"'* ]]; then
+          echo "Unexpected response from /version endpoint"
+          exit 1
+        fi
+
+    - name: Build and push Docker image
+      run: |
+        docker build -t ezzops/senseapi-devopsproject:${{ github.sha }} .
+        echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ezzops --password-stdin
+        docker push ezzops/senseapi-devopsproject:${{ github.sha }}
+        
+    - name: Lint Dockerfile
+      run: dockerfilelint dockerfile
+      continue-on-error: true
 
