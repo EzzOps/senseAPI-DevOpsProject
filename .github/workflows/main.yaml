@@ -29,7 +29,7 @@ jobs:
     - name: Python linting with flake8
       uses: advanced-security/python-lint-code-scanning-action@v1
       with:
-        linter: flake8
+        linter: pylint
 
     - name: Build and push Docker image
       run: |
