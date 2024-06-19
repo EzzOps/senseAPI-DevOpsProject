@@ -20,7 +20,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-
+    - name: Install Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
     - name: Install dockerfilelint
       run: npm install -g dockerfilelint
 
