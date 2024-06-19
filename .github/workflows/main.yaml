@@ -1,0 +1,10 @@
+#
+# TODO 
+# Add step to lint code and Dockerfile
+# https://github.com/marketplace/actions/docker-lint
+# https://github.com/MIS-Team24/khoyout-backend/blob/main/.github/workflows/main.yml
+# Add step to build the Docker image.
+#
+#
+#
+#
