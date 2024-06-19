@@ -29,7 +29,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies for linting
-      run: pip install flake8 dockerfile-lint
+      run: pip install dockerfile-lint
 
     - name: Lint Python code
       run: flake8 .
