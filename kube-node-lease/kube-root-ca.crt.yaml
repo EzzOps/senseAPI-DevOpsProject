@@ -1,0 +1,26 @@
+apiVersion: v1
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDBTCCAe2gAwIBAgIIOk0Nl0J7mWgwDQYJKoZIhvcNAQELBQAwFTETMBEGA1UE
+    AxMKa3ViZXJuZXRlczAeFw0yNjA1MjkxNzU0MjdaFw0zNjA1MjYxNzU5MjdaMBUx
+    EzARBgNVBAMTCmt1YmVybmV0ZXMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+    AoIBAQCYhf2fTc+2dc9Rr2r0Of3ZmfMuGv4C6oJ4YQjOMYoswigHZOLyC7vGXsTp
+    yiMNlDJhl1EZk28/+iDaal3SfOz95bhfsNV//fev68sHgj0uVNBEi5Q72Nr0VRKs
+    ASS8yTPX4dahxGibM3q4WjNUHo68ru6nlMW4OFD86HdovR1Wsdxd6MwKJ1ZJKrbh
+    seK5fACZHc0FcKZLA/I+g1//fMMTDOW9vK23QsiMf8enmkV10AEP0Zi13Pe/fwMT
+    TSeDwLsaZDJwDKwqqyFHfDJQus/6KEsEqAEodOSvdmA6hmvlYzgkx1TjbF7dqep/
+    lDQwS3rUZ1O/OD0pPiH/FCQ325NjAgMBAAGjWTBXMA4GA1UdDwEB/wQEAwICpDAP
+    BgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTlOchuieH4MDcn4BAeKSgsgEFX1jAV
+    BgNVHREEDjAMggprdWJlcm5ldGVzMA0GCSqGSIb3DQEBCwUAA4IBAQBPNLZysmc7
+    LJwJrcgn3L4QYM5plYdLwB8IrKAu23VyduIS6qORwQitnaKcOk3qjztaSCJXjhOy
+    MLIvhvHuaUe+EdNtarw4jJ5gL7ckkZuVUmM+9qErAMSgfQkVJwl4fyN/466TTfbS
+    Iuts692OzkrJ60n2pSXhC5+q2nlrH1dQhz/88HzUFkqeMd+l8t9njJebPC+3jvm2
+    znjjmi0YmbvTOKPdLlOeoPoy5rVL700IJLElYD8yjr/kWC3jmzi6R9jJo6ZP2rIh
+    4vc/1a1rcKe2qB8RdDyP+rH303993JSMPvELNy/TOb3BfZSaJbEf6yW3cXu3MIQs
+    3UhQ4Oz37k+w
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  name: kube-root-ca.crt
+  namespace: kube-node-lease
